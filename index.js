@@ -30,7 +30,7 @@ mongoose
 app.use("/api/auth", authRoutes);
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.json("Hello World!");
 });
 
 const PORT = process.env.PORT || 5600;
