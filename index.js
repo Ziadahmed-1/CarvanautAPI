@@ -10,14 +10,14 @@ app.use(cors());
 
 // You can also set up CORS options for more control (optional)
 // Example: Allow only specific origins
-const corsOptions = {
-  origin: process.env.CLIENT_URL, // Allow only this domain
-  methods: ["GET", "POST", "PUT", "DELETE"], // Allow only specific methods
-  allowedHeaders: ["Content-Type", "Authorization"], // Allow specific headers
-};
+// const corsOptions = {
+//   origin: process.env.CLIENT_URL, // Allow only this domain
+//   methods: ["GET", "POST", "PUT", "DELETE"], // Allow only specific methods
+//   allowedHeaders: ["Content-Type", "Authorization"], // Allow specific headers
+// };
 
-// Use the corsOptions in the middleware
-app.use(cors(corsOptions));
+// // Use the corsOptions in the middleware
+// app.use(cors(corsOptions));
 
 mongoose
   .connect(process.env.MONGO_URI)
