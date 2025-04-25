@@ -6,7 +6,8 @@ import dotenv from "dotenv";
 
 const app = express();
 dotenv.config();
-app.use(cors());
+app.use(express.json());
+app.use(cors({ origin: "*" }));
 
 // You can also set up CORS options for more control (optional)
 // Example: Allow only specific origins
@@ -24,7 +25,6 @@ mongoose
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.log(err));
 
-app.use(express.json());
 app.use("/api/auth", authRoutes);
 
 app.get("/", (req, res) => {
