@@ -10,13 +10,13 @@ app.use(express.json());
 
 // CORS configuration
 const corsOptions = {
-  origin: "http://localhost:5173", // Your front-end URL (you can add multiple origins for production)
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Add other methods you need
+  origin: "http://localhost:5173", // Your frontend URL
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true, // If you're using cookies or sessions
 };
 
-app.use(cors(corsOptions));
+app.use(cors(corsOptions)); // Apply CORS middleware
 
 // Middleware to handle the OPTIONS request correctly
 app.options("*", cors(corsOptions)); // This handles preflight requests
