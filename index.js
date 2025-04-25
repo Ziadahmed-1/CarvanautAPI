@@ -10,11 +10,10 @@ app.use(express.json());
 
 // CORS configuration
 const corsOptions = {
-  origin: "http://localhost:5173", // Allow your local dev URL
-  methods: "GET, POST, PUT, DELETE, OPTIONS", // Allow methods for CORS
-  allowedHeaders: "Content-Type, Authorization", // Specify allowed headers
-  preflightContinue: false, // Don't pass the OPTIONS request to other handlers
-  optionsSuccessStatus: 204, // Some browsers (like IE11) require a 204 status for OPTIONS
+  origin: "http://localhost:5173", // Your front-end URL (you can add multiple origins for production)
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Add other methods you need
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true, // If you're using cookies or sessions
 };
 
 app.use(cors(corsOptions));
